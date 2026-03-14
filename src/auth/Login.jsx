@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from "react";
 import { X, Eye, EyeOff } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+  let navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [form, setForm] = useState({
     email: "",
@@ -108,6 +110,7 @@ const Login = () => {
           <button
             type="submit"
             className="w-full bg-black text-white py-2 rounded-md mt-4 hover:bg-gray-800"
+            onClick={()=>{navigate("/landingpage")}}
           >
             Login
           </button>
