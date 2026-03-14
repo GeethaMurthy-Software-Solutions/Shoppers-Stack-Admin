@@ -1,10 +1,11 @@
+import Login from "./auth/Login"
 
 
 function App() {
 
   return (
     <>
-     
+     <Login />
     </>
   )
 }
