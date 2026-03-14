@@ -1,12 +1,14 @@
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 
-
-function App() {
-
+const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <>
-     
-    </>
-  )
-}
-
-export default App
+    <div>
+      <Navbar toggleSidebar={() => setIsOpen(!isOpen)} />
+      <Sidebar isOpen={isOpen} />
+    </div>
+  );
+};
+export default App;
