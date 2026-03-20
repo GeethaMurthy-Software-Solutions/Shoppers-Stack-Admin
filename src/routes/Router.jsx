@@ -4,6 +4,7 @@ import Login from '../auth/Login';
 import App from "../App";
 import AdminLayout from '../components/AdminLayout';
 import Dashboard from '../modules/Dashboard';
+import ProductManagement from '../components/ProductManagement';
 let routes = createBrowserRouter([
     {
         path:"/",
@@ -16,9 +17,16 @@ let routes = createBrowserRouter([
             {
                 index:true,
                 element:<Dashboard/>
+            },
+            {
+            path : "/landingpage/productmanagement",
+            element : <ProductManagement/>
             }
+            
         ]
+        
     },
+  
     
 ]);
 
