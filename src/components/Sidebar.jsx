@@ -13,11 +13,11 @@ const Sidebar = ({ isOpen }) => {
     >
 
       <ul className="mt-6 space-y-2 px-4">
-
-        <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
+        
+        <Link to="/landingpage" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
           <MdDashboard size={20}/>
           Dashboard
-        </li>
+        </Link>
 
         <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
           <MdPeopleOutline size={20}/>
