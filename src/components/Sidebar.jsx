@@ -31,10 +31,12 @@ const Sidebar = ({ isOpen }) => {
           </li>
         </Link>
 
+       <Link to="/landingpage/productmanagement">
         <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
           <MdInventory size={20}/>
           Product Management
         </li>
+       </Link>
 
         <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
           Coupon Management
