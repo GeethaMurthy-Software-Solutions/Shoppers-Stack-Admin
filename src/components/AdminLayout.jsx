@@ -12,11 +12,13 @@ const AdminLayout = () => {
       <div className="flex">
         
         {/* Sidebar */}
-        <Sidebar isOpen={isOpen}  />
+        <Sidebar isOpen={isOpen} closeSidebar={()=>setIsOpen(false)} />
 
         {/* Main Content */}
-        <div className={`mt-14 flex-1 p-6 transition-all duration-300 
-          ${isOpen ? "ml-60" : "ml-0"} md:ml-60`}>
+        <div className="
+          mt-14 flex-1 p-4 sm:p-6 transition-all duration-300
+          lg:ml-64  
+        ">
           <Outlet />
         </div>
 

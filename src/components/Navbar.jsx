@@ -8,7 +8,7 @@ const Navbar = ({ toggleSidebar }) => {
 
       <div className="flex items-center gap-3">
         <GiHamburgerMenu
-          className="text-xl cursor-pointer md:hidden"
+          className="text-xl cursor-pointer lg:hidden"
           onClick={toggleSidebar}
         />
         <span className="font-medium hidden sm:block">Admin</span>
