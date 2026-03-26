@@ -6,35 +6,40 @@ import AdminLayout from '../components/AdminLayout';
 import Dashboard from '../modules/Dashboard';
 import MerchentManagement from '../components/MerchentManagement';
 import ProductManagement from '../components/ProductManagement';
+import UserManagement from '../components/UserManagement';
 let routes = createBrowserRouter([
     {
-        path:"/",
-        element:<App/>
+        path: "/",
+        element: <App />
     },
     {
-        path:"/landingpage",
-        element:<AdminLayout/>,
-        children:[
+        path: "/landingpage",
+        element: <AdminLayout />,
+        children: [
             {
-                index:true,
-                element:<Dashboard/>
+                index: true,
+                element: <Dashboard />
             },
             {
-        path:'/landingpage/merchentmanagement',
-        element:<MerchentManagement/>
+                path: '/landingpage/merchentmanagement',
+                element: <MerchentManagement />
             },
             {
-            path : "/landingpage/productmanagement",
-            element : <ProductManagement/>
-    }   
-            
+                path: "/landingpage/productmanagement",
+                element: <ProductManagement />
+            },
+            {
+                path: "/landingpage/usermanagement",
+                element: <UserManagement/>
+            }
+
         ]
-        
+
     },
-  
-    
-    
-    
+
+
+
+
 ]);
 
 export default routes;

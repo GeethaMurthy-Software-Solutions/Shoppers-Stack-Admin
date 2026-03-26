@@ -27,10 +27,11 @@ const Sidebar = ({ isOpen,closeSidebar }) => {
           Dashboard
         </Link>
 
-        <li onClick={closeSidebar} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
+       <Link  onClick={closeSidebar} to='/landingpage/usermanagement'  >
+        <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
           <MdPeopleOutline size={20}/>
           User Management
-        </li>
+        </li></Link>
 
         <Link onClick={closeSidebar} to='/landingpage/merchentmanagement'>
           <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800">
