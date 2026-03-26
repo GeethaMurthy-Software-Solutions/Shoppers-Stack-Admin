@@ -1,4 +1,5 @@
 import { MdDashboard, MdPeopleOutline, MdStorefront, MdInventory, MdLogout } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Sidebar = ({ isOpen }) => {
   return (
@@ -12,26 +13,30 @@ const Sidebar = ({ isOpen }) => {
     >
 
       <ul className="mt-6 space-y-2 px-4">
-
-        <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
+        
+        <Link to="/landingpage" className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
           <MdDashboard size={20}/>
           Dashboard
-        </li>
+        </Link>
 
         <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
           <MdPeopleOutline size={20}/>
           User Management
         </li>
 
-        <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
-          <MdStorefront size={20}/>
-          Merchant Management
-        </li>
+        <Link to='/landingpage/merchentmanagement'>
+          <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
+            <MdStorefront size={20}/>
+            Merchant Management
+          </li>
+        </Link>
 
+       <Link to="/landingpage/productmanagement">
         <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
           <MdInventory size={20}/>
           Product Management
         </li>
+       </Link>
 
         <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
           Coupon Management
