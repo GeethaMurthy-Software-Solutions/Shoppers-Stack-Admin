@@ -79,13 +79,13 @@ const MerchentManagement = () => {
         <button className='w-full sm:w-40 md:w-48 lg:w-52 text-center sm:text-left text-sm sm:text-base font-medium p-2 sm:p-3 rounded-xl border bg-gray-200'>
             All Status
         </button>
-        </div> 
+    </div>
 
     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5'>
         <div className='shadow-md bg-white p-3 sm:p-4 rounded-xl'>
             <h3 className='text-sm sm:text-base'>Pending Merchants</h3>
             <h1 className='font-medium text-lg sm:text-xl'>14</h1>
-            </div>
+        </div>
 
         <div className='shadow-md bg-white p-3 sm:p-4 rounded-xl'>
             <h3 className='text-sm sm:text-base'>Approved Merchants</h3>
@@ -95,8 +95,8 @@ const MerchentManagement = () => {
         <div className='shadow-md bg-white p-3 sm:p-4 rounded-xl'>
             <h3 className='text-sm sm:text-base'>Suspended Merchants</h3>
             <h1 className='font-medium text-lg sm:text-xl'>8</h1>
-            </div>
         </div>
+    </div>
 
     {/* Desktop Table */}
     <div className='hidden md:block overflow-x-auto'>
@@ -126,15 +126,15 @@ const MerchentManagement = () => {
                             <td className="p-2">
                                 <div className="flex gap-2 flex-wrap">
                                     <button className="px-2 py-1 bg-green-800 text-white rounded hover:bg-green-900">
-                                            {Action1}
-                                        </button>
+                                        {Action1}
+                                    </button>
                                     <button className="px-2 py-1 bg-red-700 text-white rounded hover:bg-red-800">
-                                            {Action2}
-                                        </button>
+                                        {Action2}
+                                    </button>
                                     <button className="px-2 py-1 bg-yellow-600 text-white rounded hover:bg-yellow-700">
                                         {Action3}
-                                        </button>
-                                    </div>
+                                    </button>
+                                </div>
                             </td>
                         </tr>
                     ))
@@ -186,7 +186,7 @@ const MerchentManagement = () => {
         <button className="border p-1 rounded w-12 sm:w-16 md:w-20">Next</button>
     </div>
 
-    </div>
+</div>
     
   )
 }
