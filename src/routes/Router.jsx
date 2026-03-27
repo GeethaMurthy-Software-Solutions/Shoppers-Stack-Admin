@@ -7,6 +7,7 @@ import Dashboard from '../modules/Dashboard';
 import MerchentManagement from '../components/MerchentManagement';
 import ProductManagement from '../components/ProductManagement';
 import UserManagement from '../components/UserManagement';
+import CouponManagement from '../components/CouponManagement';
 let routes = createBrowserRouter([
     {
         path: "/",
@@ -31,6 +32,10 @@ let routes = createBrowserRouter([
             {
                 path: "/landingpage/usermanagement",
                 element: <UserManagement/>
+            },
+            {
+                path:"/landingpage/couponmanagement",
+                element:<CouponManagement/>
             }
 
         ]

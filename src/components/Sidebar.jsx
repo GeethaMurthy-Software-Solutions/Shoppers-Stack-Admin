@@ -46,10 +46,13 @@ const Sidebar = ({ isOpen,closeSidebar }) => {
           Product Management
         </li>
        </Link>
-
+        <Link onClick={closeSidebar} to="/landingpage/couponmanagement">
         <li  className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
           Coupon Management
         </li>
+       </Link>
+
+        
 
         <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 cursor-pointer">
           <MdLogout size={20}/>
