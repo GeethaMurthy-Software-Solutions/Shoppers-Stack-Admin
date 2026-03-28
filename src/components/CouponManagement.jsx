@@ -1,6 +1,5 @@
 import React from 'react'
-import Navbar from './Navbar'
-import Sidebar from './Sidebar'
+import { Link } from 'react-router-dom';
 
 const CouponManagement = () => {
     const coupons = [
@@ -90,9 +89,10 @@ const CouponManagement = () => {
             Coupon Management
         </h1>
 
+        <Link to='/landingpage/addcoupon'>
         <button className='border px-3 py-2 rounded-xl bg-black text-white font-medium w-full sm:w-auto'>
             Add Coupon
-        </button>
+        </button></Link>
     </div>
 
     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5'>

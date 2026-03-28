@@ -8,6 +8,7 @@ import MerchentManagement from '../components/MerchentManagement';
 import ProductManagement from '../components/ProductManagement';
 import UserManagement from '../components/UserManagement';
 import CouponManagement from '../components/CouponManagement';
+import AddCoupon from '../components/AddCoupon';
 let routes = createBrowserRouter([
     {
         path: "/",
@@ -36,6 +37,10 @@ let routes = createBrowserRouter([
             {
                 path:"/landingpage/couponmanagement",
                 element:<CouponManagement/>
+            },
+            {
+                path:"/landingpage/addcoupon",
+                element:<AddCoupon/>
             }
 
         ]
