@@ -207,252 +207,183 @@ const MerchentManagement = () => {
       company: "Nagesh Traders",
       email: "nag@sharma.com",
       status: "Pending",
-      Action1:"Approve",
-      Action2:'Reject',
-      Action3:"Suspend",
       registration: "10 Feb 2025",
-      style:'border rounded-xl p-1 text-xs text-red-700 bg-red-300'
     },
     {
       name: "Shreya Verma",
       company: "Verma Fashions",
       email: "shreya@verma.com",
       status: "Approved",
-      Action1:"Approve",
-      Action2:'Reject',
-      Action3:"Suspend",
       registration: "05 Jan 2025",
-      style:'border rounded-xl p-1 text-xs text-red-700 bg-red-300'
     },
     {
       name: "Pranav Singh",
       company: "Singh Electronics",
       email: "pranav@singh.com",
       status: "Suspended",
-      Action1:"Approve",
-      Action2:'Reject',
-      Action3:"Suspend",
       registration: "18 Dec 2024",
-      style:'border rounded-xl p-1 text-xs text-red-700 bg-red-300'
     },
-    {
-      name:'Karthik Reddy',
-      company:'Reddy Mobiles',
-      email:'karthik@reddy.com',
-      status:'Suspended',
-      registration:'03 Jan 2025',
-      Action1:"Approve",
-      Action2:'Reject',
-      Action3:"Suspend",
-      style:'border rounded-xl p-1 text-xs text-red-700 bg-red-300'
-    },
-    {
-      name:'Meera Joshi',
-      company:'Joshi Home Decor',
-      email:'meera@joshi.com',
-      status:'Suspended',
-      registration:'27 Nov 2024',
-      Action1:"Approve",
-      Action2:'Reject',
-      Action3:"Suspend",
-      style:'border rounded-xl p-1 text-xs text-red-700 bg-red-300'
-    }
   ];
 
   const getStatusStyle = (status) => {
     if (status === "Pending")
-      return "bg-yellow-300 text-yellow-700 px-2 py-1 rounded-full text-xs";
+      return "bg-yellow-300 text-yellow-800 px-2 py-1 rounded-full text-xs";
     if (status === "Approved")
-      return "bg-green-300 text-green-700 px-2 py-1 rounded-full text-xs";
-    return "bg-red-300 text-red-700 px-2 py-1 rounded-full text-xs";
+      return "bg-green-300 text-green-800 px-2 py-1 rounded-full text-xs";
+    return "bg-red-300 text-red-800 px-2 py-1 rounded-full text-xs";
   };
 
   return (
-    <div className="bg-[#F4F6F8] min-h-screen p-6 space-y-5">
+    <div className="bg-[#F4F6F8] min-h-screen p-4 sm:p-6 space-y-5">
 
       {/* TITLE */}
-      <h1 className="text-xl font-semibold">Merchant Management</h1>
+      <h1 className="text-lg sm:text-xl font-semibold">
+        Merchant Management
+      </h1>
 
       {/* SEARCH */}
       <div className="flex flex-col sm:flex-row gap-3">
         <input
           placeholder="Search by merchant or email"
-          className='border rounded-xl p-2 sm:p-3 text-sm w-full'
-          type="text"
+          className="border rounded-xl p-2 sm:p-3 text-sm w-full"
         />
-        <button className="w-full sm:w-40 md:w-48 lg:w-52 text-center sm:text-left text-sm sm:text-base font-medium p-2 sm:p-3 rounded-xl border bg-gray-200">
+        <button className="w-full sm:w-auto text-sm sm:text-base p-2 sm:p-3 rounded-xl border bg-gray-200">
           All Status
         </button>
       </div>
 
       {/* CARDS */}
-      <div className="grid grid-cols-3 gap-4">
-        <div className="bg-white p-4 rounded-lg shadow-sm">
-          <p className="text-sm text-gray-500">Pending Merchants</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="bg-white p-4 rounded-lg shadow">
+          <p className="text-sm text-gray-500">Pending</p>
           <h2 className="text-xl font-semibold">14</h2>
         </div>
-
-        <div className="bg-white p-4 rounded-lg shadow-sm">
-          <p className="text-sm text-gray-500">Approved Merchants</p>
+        <div className="bg-white p-4 rounded-lg shadow">
+          <p className="text-sm text-gray-500">Approved</p>
           <h2 className="text-xl font-semibold">96</h2>
         </div>
-
-        <div className="bg-white p-4 rounded-lg shadow-sm">
-          <p className="text-sm text-gray-500">Suspended Merchants</p>
+        <div className="bg-white p-4 rounded-lg shadow">
+          <p className="text-sm text-gray-500">Suspended</p>
           <h2 className="text-xl font-semibold">8</h2>
         </div>
       </div>
 
-      {/* TABLE */}
-      <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+      {/* TABLE (Desktop) */}
+      <div className="hidden md:block bg-white rounded-lg shadow overflow-hidden">
         <table className="w-full text-sm">
-          <thead className="bg-gray-50 text-gray-600">
+          <thead className="bg-gray-50">
             <tr>
-              <th className="p-3 text-left">Merchant Name</th>
-              <th className="p-3 text-left">Company Name</th>
+              <th className="p-3 text-left">Name</th>
+              <th className="p-3 text-left">Company</th>
               <th className="p-3 text-left">Email</th>
               <th className="p-3 text-left">Status</th>
-              <th className="p-3 text-left">Registration Date</th>
-              <th className="p-3 text-left">Action</th>
+              <th className="p-3 text-left">Date</th>
             </tr>
           </thead>
-
           <tbody>
             {details.map((item) => (
               <tr
                 key={item.name}
                 onClick={() => setSelectedMerchant(item)}
-                className="border-t last:border-b hover:bg-gray-50 cursor-pointer"
+                className="border-t hover:bg-gray-50 cursor-pointer"
               >
                 <td className="p-3">{item.name}</td>
                 <td className="p-3">{item.company}</td>
                 <td className="p-3">{item.email}</td>
-
                 <td className="p-3">
                   <span className={getStatusStyle(item.status)}>
                     {item.status}
                   </span>
                 </td>
-
                 <td className="p-3">{item.registration}</td>
-
-                <td
-                  className="p-3 flex gap-2"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <button className="bg-green-800 text-white px-3 py-1 rounded text-xs">
-                    Approve
-                  </button>
-                  <button className="bg-red-700 text-white px-3 py-1 rounded text-xs">
-                    Reject
-                  </button>
-                  <button className="bg-yellow-600 text-white px-3 py-1 rounded text-xs">
-                    Suspend
-                  </button>
-                </td>
               </tr>
             ))}
           </tbody>
         </table>
+      </div>
 
-        {/* PAGINATION */}
-        <div className="flex justify-end gap-2 p-4">
-          <button className="border px-3 py-1 rounded text-sm">Prev</button>
-          <button className="bg-black text-white px-3 py-1 rounded text-sm">
-            1
-          </button>
-          <button className="border px-3 py-1 rounded text-sm">2</button>
-          <button className="border px-3 py-1 rounded text-sm">3</button>
-          <button className="border px-3 py-1 rounded text-sm">Next</button>
-        </div>
+      {/* MOBILE CARDS */}
+      <div className="md:hidden flex flex-col gap-4">
+        {details.map((item) => (
+          <div
+            key={item.name}
+            onClick={() => setSelectedMerchant(item)}
+            className="bg-white p-4 rounded-xl shadow cursor-pointer"
+          >
+            <h2 className="font-medium">{item.name}</h2>
+            <p className="text-sm text-gray-500">{item.company}</p>
+            <p className="text-xs">{item.email}</p>
+            <div className="mt-2">
+              <span className={getStatusStyle(item.status)}>
+                {item.status}
+              </span>
+            </div>
+            <p className="text-xs mt-2 text-gray-500">
+              {item.registration}
+            </p>
+          </div>
+        ))}
       </div>
 
       {/* MODAL */}
       {selectedMerchant && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-2">
 
-          <div className="bg-[#F4F6F8] w-[700px] rounded-xl shadow-lg">
+          <div className="bg-white w-full sm:w-[600px] lg:w-[700px] max-h-[90vh] overflow-y-auto rounded-xl shadow-lg">
 
             {/* HEADER */}
-            <div className="flex justify-between items-center px-6 py-4 border-b">
+            <div className="flex justify-between items-center p-4 border-b">
               <h2 className="font-semibold text-lg">Merchant Details</h2>
-
-              <div className="flex items-center gap-3">
-                <span className=" px-3 py-1 rounded-full bg-gray-200 text-s text-gray-700 font-bold font-[Calibri]">
-                  {selectedMerchant.status.toUpperCase()}
-                </span>
-
-                <button onClick={() => setSelectedMerchant(null)}><RxCross2 /></button>
-              </div>
+              <button onClick={() => setSelectedMerchant(null)}>
+                <RxCross2 size={20} />
+              </button>
             </div>
 
             {/* BODY */}
-            <div className="grid grid-cols-2 gap-x-12 gap-y-5 px-6 py-5 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 text-sm">
 
               <div>
-                <p className="text-gray-400 text-xs">MERCHANT NAME</p>
-                <p className="text-s text-gray-700 font-bold font-[Calibri]">{selectedMerchant.name}</p>
+                <p className="text-gray-400 text-xs">Name</p>
+                <p className="font-medium">{selectedMerchant.name}</p>
               </div>
 
               <div>
-                <p className="text-gray-400 text-xs">COMPANY NAME</p>
-                <p className="text-s text-gray-700 font-bold font-[Calibri]">{selectedMerchant.company} Pvt Ltd</p>
+                <p className="text-gray-400 text-xs">Company</p>
+                <p className="font-medium">{selectedMerchant.company}</p>
               </div>
 
               <div>
-                <p className="text-gray-400 text-xs">EMAIL</p>
-                <p className="text-s text-gray-700 font-bold font-[Calibri]">
-                  {selectedMerchant.email.toLowerCase().replace(".com","") + ".com"}
+                <p className="text-gray-400 text-xs">Email</p>
+                <p className="font-medium">{selectedMerchant.email}</p>
+              </div>
+
+              <div>
+                <p className="text-gray-400 text-xs">Status</p>
+                <span className={getStatusStyle(selectedMerchant.status)}>
+                  {selectedMerchant.status}
+                </span>
+              </div>
+
+              <div>
+                <p className="text-gray-400 text-xs">Registration</p>
+                <p className="font-medium">
+                  {selectedMerchant.registration}
                 </p>
               </div>
-
-              <div>
-                <p className="text-gray-400 text-xs">GST NUMBER</p>
-                <p className="text-s text-gray-700 font-bold font-[Calibri]">29ABCDE1234F1Z5</p>
-              </div>
-
-              <div>
-                <p className="text-gray-400 text-xs">REGISTRATION NUMBER</p>
-                <p className="text-s text-gray-700 font-bold font-[Calibri]">REG-784512</p>
-              </div>
-
-              <div>
-                <p className="text-gray-400 text-xs">COMPANY TYPE</p>
-                <p className="text-s text-gray-700 font-bold font-[Calibri]">Private Limited</p>
-              </div>
-
-              <div>
-                <p className="text-gray-400 text-xs">WEBSITE</p>
-                <p className="underline cursor-pointer text-s text-gray-700 font-bold font-[Calibri]">
-                  www.{selectedMerchant.name.toLowerCase().replace(/\s/g,"")}.com
-                </p>
-              </div>
-
-              <div>
-                <p className="text-gray-400 text-xs">COMMISSION %</p>
-                <p className="text-s text-gray-700 font-bold font-[Calibri]">12%</p>
-              </div>
-
-              <div>
-                <p className="text-gray-400 text-xs">REGISTRATION DATE</p>
-                <p className="text-s text-gray-700 font-bold font-[Calibri]">{selectedMerchant.registration}</p>
-              </div>
-
             </div>
 
             {/* FOOTER */}
-            <div className="flex justify-end gap-3 px-6 py-4 border-t">
-              <button className="px-4 py-1 bg-black text-white rounded">
+            <div className="flex flex-col sm:flex-row justify-end gap-2 p-4 border-t">
+              <button className="bg-green-600 text-white px-4 py-2 rounded text-sm">
                 Approve
               </button>
-              <button className="px-4 py-1 bg-red-500 text-white rounded">
+              <button className="bg-red-600 text-white px-4 py-2 rounded text-sm">
                 Reject
               </button>
-              <button className="px-4 py-1 bg-gray-300 text-gray-500 rounded">
+              <button className="bg-gray-300 px-4 py-2 rounded text-sm">
                 Suspend
               </button>
             </div>
-
           </div>
         </div>
       )}
